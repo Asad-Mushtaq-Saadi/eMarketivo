@@ -1,0 +1,2460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Professional digital growth agency helping businesses scale through digital transformation, automation, and marketing excellence.">
+  <title>eMarkitivo — Digital Growth & Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ─── TOKENS ──────────────────────────────────────────────────── */
+    :root {
+      --white: #ffffff;
+      --off-white: #f8faf9;
+      --surface: #f0f5f2;
+      --border: #e2ece7;
+      --green-50: #edf7f1;
+      --green-100: #c9ebd6;
+      --green-400: #3dbf72;
+      --green-500: #25a85a;
+      --green-600: #1a8f4a;
+      --green-700: #136638;
+      --text-primary: #0d1f15;
+      --text-secondary: #3d5247;
+      --text-muted: #7a9587;
+      --shadow-sm: 0 1px 3px rgba(13, 31, 21, .06), 0 1px 2px rgba(13, 31, 21, .04);
+      --shadow-md: 0 4px 16px rgba(13, 31, 21, .08), 0 2px 6px rgba(13, 31, 21, .05);
+      --shadow-lg: 0 16px 48px rgba(13, 31, 21, .10), 0 6px 20px rgba(13, 31, 21, .06);
+      --shadow-xl: 0 32px 80px rgba(13, 31, 21, .12);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-xl: 32px;
+      --font-display: 'Sora', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --transition: .22s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    /* ─── RESET & BASE ────────────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    ul {
+      list-style: none
+    }
+
+    button {
+      font-family: var(--font-body);
+      cursor: pointer;
+      border: none;
+      background: none
+    }
+
+    /* ─── TYPOGRAPHY ──────────────────────────────────────────────── */
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -.03em
+    }
+
+    .display-lg {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -.025em
+    }
+
+    .display-md {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -.02em
+    }
+
+    .body-lg {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    .body-md {
+      font-size: 1rem;
+      line-height: 1.65
+    }
+
+    .label {
+      font-family: var(--font-display);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    /* ─── LAYOUT ──────────────────────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    .section {
+      padding: 100px 0
+    }
+
+    .section-alt {
+      background: var(--off-white)
+    }
+
+    /* ─── SECTION LABELS ─────────────────────────────────────────── */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+      color: var(--green-600);
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px
+    }
+
+    .section-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--green-500);
+      border-radius: 50%
+    }
+
+    /* ─── BUTTONS ─────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-size: .9rem;
+      font-weight: 600;
+      transition: var(--transition);
+      white-space: nowrap
+    }
+
+    .btn-primary {
+      background: var(--green-500);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(37, 168, 90, .3)
+    }
+
+    .btn-primary:hover {
+      background: var(--green-600);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(37, 168, 90, .38)
+    }
+
+    .btn-wa {
+      background: #25d366;
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(37, 211, 102, .28)
+    }
+
+    .btn-wa:hover {
+      background: #1ebe5d;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(37, 211, 102, .36)
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border)
+    }
+
+    .btn-outline:hover {
+      border-color: var(--green-400);
+      color: var(--green-600);
+      background: var(--green-50)
+    }
+
+    .btn-lg {
+      padding: 17px 36px;
+      font-size: 1rem
+    }
+
+    .btn-xl {
+      padding: 20px 44px;
+      font-size: 1.05rem;
+      border-radius: var(--radius-md)
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: var(--transition)
+    }
+
+    .nav.scrolled {
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border), var(--shadow-sm)
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 18px 24px;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0
+    }
+
+    .nav-logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--green-500), var(--green-700));
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .nav-logo-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -.02em
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: auto
+    }
+
+    .nav-links a {
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: var(--transition)
+    }
+
+    .nav-links a:hover {
+      color: var(--green-600);
+      background: var(--green-50)
+    }
+
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-left: 8px
+    }
+
+    .nav-phone svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--green-500);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 16px
+    }
+
+    .nav-ham {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      cursor: pointer
+    }
+
+    .nav-ham span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: var(--transition)
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 999;
+      padding: 100px 24px 40px;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .mobile-menu.open {
+      display: flex
+    }
+
+    .mobile-menu a {
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .mobile-menu a:hover {
+      color: var(--green-600);
+      background: var(--green-50)
+    }
+
+    .mobile-menu-actions {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    /* ─── HERO ────────────────────────────────────────────────────── */
+    .hero {
+      padding: 160px 0 100px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -100px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(ellipse, rgba(37, 168, 90, .07) 0%, transparent 70%);
+      pointer-events: none
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(61, 191, 114, .05) 0%, transparent 70%);
+      pointer-events: none
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--green-50), #e8f7ee);
+      border: 1px solid var(--green-100);
+      padding: 8px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px
+    }
+
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green-500);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite
+    }
+
+    .hero-badge span {
+      font-family: var(--font-display);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--green-700)
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1
+      }
+
+      50% {
+        transform: scale(1.3);
+        opacity: .7
+      }
+    }
+
+    .hero-headline {
+      margin-bottom: 24px
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--green-500)
+    }
+
+    .hero-desc {
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      max-width: 520px
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 48px
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border)
+    }
+
+    .hero-stat {}
+
+    .hero-stat-number {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1
+    }
+
+    .hero-stat-label {
+      font-size: .8rem;
+      color: var(--text-muted);
+      margin-top: 3px
+    }
+
+    .hero-visual {
+      position: relative
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      padding: 32px;
+      overflow: hidden;
+      position: relative
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green-500), var(--green-400))
+    }
+
+    .dashboard-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px
+    }
+
+    .dashboard-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem
+    }
+
+    .dashboard-badge {
+      background: var(--green-50);
+      color: var(--green-600);
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 600
+    }
+
+    .chart-area {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 20px;
+      height: 160px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 100%
+    }
+
+    .chart-bar {
+      flex: 1;
+      border-radius: 4px 4px 0 0;
+      transition: var(--transition);
+      position: relative
+    }
+
+    .chart-bar:hover {
+      filter: brightness(1.1)
+    }
+
+    .bar-1 {
+      height: 45%;
+      background: linear-gradient(to top, var(--green-500), var(--green-400))
+    }
+
+    .bar-2 {
+      height: 62%;
+      background: linear-gradient(to top, var(--green-500), var(--green-400))
+    }
+
+    .bar-3 {
+      height: 38%;
+      background: linear-gradient(to top, var(--green-500), var(--green-400));
+      opacity: .7
+    }
+
+    .bar-4 {
+      height: 78%;
+      background: linear-gradient(to top, var(--green-500), var(--green-400))
+    }
+
+    .bar-5 {
+      height: 55%;
+      background: linear-gradient(to top, var(--green-500), var(--green-400));
+      opacity: .8
+    }
+
+    .bar-6 {
+      height: 88%;
+      background: linear-gradient(to top, var(--green-600), var(--green-400))
+    }
+
+    .bar-7 {
+      height: 72%;
+      background: linear-gradient(to top, var(--green-500), var(--green-400));
+      opacity: .9
+    }
+
+    .chart-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .metric-card {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px
+    }
+
+    .metric-label {
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-bottom: 4px
+    }
+
+    .metric-value {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem
+    }
+
+    .metric-delta {
+      font-size: .72rem;
+      color: var(--green-600);
+      font-weight: 600
+    }
+
+    .floating-badge {
+      position: absolute;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .fb-top {
+      top: -20px;
+      right: -20px;
+      animation: float 4s ease-in-out infinite
+    }
+
+    .fb-bottom {
+      bottom: -16px;
+      left: -16px;
+      animation: float 4s ease-in-out infinite .5s
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    .fb-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .fb-icon.green {
+      background: var(--green-50)
+    }
+
+    .fb-icon.blue {
+      background: #eff6ff
+    }
+
+    .fb-icon svg {
+      width: 18px;
+      height: 18px
+    }
+
+    .fb-text .fb-num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: .9rem;
+      line-height: 1
+    }
+
+    .fb-text .fb-sub {
+      font-size: .7rem;
+      color: var(--text-muted)
+    }
+
+    /* ─── SERVICES ────────────────────────────────────────────────── */
+    .services-header {
+      text-align: center;
+      margin-bottom: 64px
+    }
+
+    .services-header .display-lg {
+      margin-bottom: 16px
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px
+    }
+
+    @media(max-width:1100px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    @media(max-width:780px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:500px) {
+      .services-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      position: relative;
+      transition: var(--transition);
+      overflow: hidden;
+      cursor: default
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--green-50), transparent);
+      opacity: 0;
+      transition: var(--transition)
+    }
+
+    .service-card:hover {
+      border-color: var(--green-400);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg)
+    }
+
+    .service-card:hover::after {
+      opacity: 1
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--green-500);
+      color: var(--white)
+    }
+
+    .service-card:hover .service-icon svg {
+      stroke: var(--white)
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      transition: var(--transition);
+      position: relative;
+      z-index: 1
+    }
+
+    .service-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--green-600);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: var(--transition)
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: .95rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1
+    }
+
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      z-index: 1
+    }
+
+    .service-list li {
+      font-size: .8rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .service-list li::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--green-400);
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    /* ─── WHY US ──────────────────────────────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 56px
+    }
+
+    @media(max-width:900px) {
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:480px) {
+      .why-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .why-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden
+    }
+
+    .why-card:hover {
+      border-color: var(--green-400);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px)
+    }
+
+    .why-num {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--green-100);
+      line-height: 1;
+      margin-bottom: 16px;
+      transition: var(--transition)
+    }
+
+    .why-card:hover .why-num {
+      color: var(--green-500)
+    }
+
+    .why-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--green-50), var(--green-100));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px
+    }
+
+    .why-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--green-600);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .why-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px
+    }
+
+    .why-desc {
+      font-size: .875rem;
+      color: var(--text-secondary);
+      line-height: 1.6
+    }
+
+    /* ─── ABOUT ───────────────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center
+    }
+
+    .about-visual {
+      position: relative
+    }
+
+    .about-img-wrap {
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative
+    }
+
+    .about-img-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--green-50) 0%, var(--surface) 100%)
+    }
+
+    .about-illustration {
+      width: 80%;
+      max-width: 340px;
+      opacity: .9
+    }
+
+    .about-pill {
+      position: absolute;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      box-shadow: var(--shadow-md);
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: .8rem;
+      font-weight: 600
+    }
+
+    .about-pill.top {
+      top: 24px;
+      left: -20px
+    }
+
+    .about-pill.bottom {
+      bottom: 24px;
+      right: -20px
+    }
+
+    .about-pill .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green-500);
+      border-radius: 50%
+    }
+
+    .about-content {}
+
+    .about-content .display-lg {
+      margin-bottom: 20px
+    }
+
+    .about-content p {
+      color: var(--text-secondary);
+      margin-bottom: 16px
+    }
+
+    .about-features {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px
+    }
+
+    .af-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green-50);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px
+    }
+
+    .af-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--green-600);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .af-text strong {
+      font-family: var(--font-display);
+      font-size: .9rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2px
+    }
+
+    .af-text span {
+      font-size: .85rem;
+      color: var(--text-secondary)
+    }
+
+    /* ─── TEAM ────────────────────────────────────────────────────── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 56px
+    }
+
+    @media(max-width:1000px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    @media(max-width:720px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:460px) {
+      .team-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .team-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      transition: var(--transition)
+    }
+
+    .team-card:hover {
+      border-color: var(--green-400);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px)
+    }
+
+    .team-photo {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-100), var(--surface));
+      border: 3px solid var(--border);
+      margin: 0 auto 18px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green-600);
+      transition: var(--transition)
+    }
+
+    .team-card:hover .team-photo {
+      border-color: var(--green-400)
+    }
+
+    .team-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px
+    }
+
+    .team-role {
+      font-size: .8rem;
+      color: var(--green-600);
+      font-weight: 600;
+      margin-bottom: 12px
+    }
+
+    .team-bio {
+      font-size: .82rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 16px
+    }
+
+    .team-linkedin {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      transition: var(--transition)
+    }
+
+    .team-linkedin:hover {
+      background: #0a66c2;
+      color: #fff
+    }
+
+    .team-linkedin svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      color: var(--text-muted);
+      transition: var(--transition)
+    }
+
+    .team-linkedin:hover svg {
+      color: #fff
+    }
+
+    /* ─── TRUST / COUNTERS ───────────────────────────────────────── */
+    .trust {
+      background: linear-gradient(135deg, var(--green-700) 0%, var(--green-500) 100%);
+      color: var(--white);
+      padding: 80px 0
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center
+    }
+
+    @media(max-width:700px) {
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    .trust-item {
+      padding: 20px
+    }
+
+    .trust-number {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px
+    }
+
+    .trust-label {
+      font-size: .875rem;
+      opacity: .85;
+      font-weight: 400
+    }
+
+    .trust-plus {
+      color: rgba(255, 255, 255, .7)
+    }
+
+    /* ─── CONTACT ─────────────────────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 24px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      transition: var(--transition)
+    }
+
+    .contact-item:hover {
+      border-color: var(--green-400);
+      box-shadow: var(--shadow-md)
+    }
+
+    .ci-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--green-50);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .ci-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--green-600);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .ci-label {
+      font-size: .78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 4px
+    }
+
+    .ci-value {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .contact-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 48px
+    }
+
+    .contact-cta-block {}
+
+    .contact-cta-block p {
+      color: var(--text-secondary);
+      margin-bottom: 28px
+    }
+
+    .contact-cta-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────────────── */
+    .footer {
+      background: var(--text-primary);
+      color: rgba(255, 255, 255, .75);
+      padding: 64px 0 32px
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px
+    }
+
+    @media(max-width:720px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+    }
+
+    .footer-brand {}
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px
+    }
+
+    .footer-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--green-500), var(--green-700));
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .footer-logo-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--white)
+    }
+
+    .footer-desc {
+      font-size: .875rem;
+      line-height: 1.7;
+      max-width: 300px
+    }
+
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: .85rem;
+      color: var(--white);
+      margin-bottom: 18px;
+      letter-spacing: .05em
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .footer-links a {
+      font-size: .85rem;
+      transition: var(--transition)
+    }
+
+    .footer-links a:hover {
+      color: var(--green-400)
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .footer-copy {
+      font-size: .8rem
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp .7s ease forwards
+    }
+
+    .fade-up-1 {
+      animation-delay: .1s
+    }
+
+    .fade-up-2 {
+      animation-delay: .2s
+    }
+
+    .fade-up-3 {
+      animation-delay: .3s
+    }
+
+    .fade-up-4 {
+      animation-delay: .4s
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+    @media(max-width:960px) {
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px
+      }
+
+      .hero-visual {
+        display: none
+      }
+
+      .about-visual {
+        display: none
+      }
+
+      .nav-links,
+      .nav-phone,
+      .nav-actions {
+        display: none
+      }
+
+      .nav-ham {
+        display: flex
+      }
+
+      .section {
+        padding: 72px 0
+      }
+    }
+
+    @media(max-width:600px) {
+      .trust-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 20px
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center
+      }
+    }
+
+    /* ─── DIVIDER ─────────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" aria-label="Home">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+        </div>
+        <span class="nav-brand"><!-- COMPANY NAME -->eMarketivo</span>
+      </a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#team">Team</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-phone">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+        </svg>
+        <!-- PHONE NUMBER --><span>+1 (630) 523-2372</span>
+      </div>
+      <div class="nav-actions">
+        <a href="https://wa.me/16305232372" class="btn btn-wa" style="padding:9px 18px;font-size:.82rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+      <button class="nav-ham" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMobile()">Home</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#team" onclick="closeMobile()">Team</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+    <div class="mobile-menu-actions">
+      <a href="tel:+10000000000" class="btn btn-primary btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+        </svg>
+        Call Now
+      </a>
+      <a href="https://wa.me/16305232372" class="btn btn-wa" style="padding:9px 18px;font-size:.82rem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+        </svg>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ HERO ══════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge fade-up fade-up-1">
+            <div class="dot"></div>
+            <span>Digital Growth Agency</span>
+          </div>
+          <h1 class="display-xl hero-headline fade-up fade-up-2">
+            Helping Businesses Scale Through <em>Digital Growth</em> &amp; Automation
+          </h1>
+          <p class="body-lg hero-desc fade-up fade-up-3">
+            We help businesses increase visibility, automate operations, improve customer acquisition, and create modern
+            digital experiences that convert.
+          </p>
+          <div class="hero-ctas fade-up fade-up-4">
+            <a href="tel:+10000000000" class="btn btn-primary btn-xl">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+              </svg>
+              Call Now
+            </a>
+            <a href="https://wa.me/16305232372" class="btn btn-wa btn-xl">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+              </svg>
+              WhatsApp Us
+            </a>
+          </div>
+          <div class="hero-stats fade-up fade-up-4">
+            <div class="hero-stat">
+              <div class="hero-stat-number">200<span style="color:var(--green-500)">+</span></div>
+              <div class="hero-stat-label">Projects Done</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number">150<span style="color:var(--green-500)">+</span></div>
+              <div class="hero-stat-label">Happy Clients</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number">98<span style="color:var(--green-500)">%</span></div>
+              <div class="hero-stat-label">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div style="position:relative;padding:20px">
+            <div class="floating-badge fb-top">
+              <div class="fb-icon green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                  <polyline points="17 6 23 6 23 12" />
+                </svg>
+              </div>
+              <div class="fb-text">
+                <div class="fb-num">+128%</div>
+                <div class="fb-sub">Revenue Growth</div>
+              </div>
+            </div>
+            <div class="hero-card">
+              <div class="dashboard-header">
+                <span class="dashboard-title">Growth Analytics</span>
+                <span class="dashboard-badge">Live</span>
+              </div>
+              <div class="chart-area">
+                <div class="chart-bars">
+                  <div class="chart-bar bar-1"></div>
+                  <div class="chart-bar bar-2"></div>
+                  <div class="chart-bar bar-3"></div>
+                  <div class="chart-bar bar-4"></div>
+                  <div class="chart-bar bar-5"></div>
+                  <div class="chart-bar bar-6"></div>
+                  <div class="chart-bar bar-7"></div>
+                </div>
+              </div>
+              <div class="metric-row">
+                <div class="metric-card">
+                  <div class="metric-label">Leads This Month</div>
+                  <div class="metric-value">1,284 <span class="metric-delta">↑ 34%</span></div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-label">Conversion Rate</div>
+                  <div class="metric-value">8.7% <span class="metric-delta">↑ 12%</span></div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-label">Ad ROAS</div>
+                  <div class="metric-value">4.2x <span class="metric-delta">↑ 18%</span></div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-label">Automation Saved</div>
+                  <div class="metric-value">42 hrs <span class="metric-delta">↑ 55%</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="floating-badge fb-bottom">
+              <div class="fb-icon green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <div class="fb-text">
+                <div class="fb-num">24/7</div>
+                <div class="fb-sub">Always Active</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════ SERVICES ════════════════════════ -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <div class="section-label label">What We Do</div>
+        <h2 class="display-lg">Our Services</h2>
+        <p style="color:var(--text-secondary);max-width:520px;margin:0 auto" class="body-md">
+          End-to-end digital solutions designed to grow your business, streamline operations, and maximise returns.
+        </p>
+      </div>
+      <div class="services-grid">
+
+        <!-- 1 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <polygon points="23 7 16 12 23 17 23 7" />
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+            </svg>
+          </div>
+          <h3 class="service-title">Ads &amp; Commercial Creation</h3>
+          <ul class="service-list">
+            <li>Video advertisements</li>
+            <li>Promotional creatives</li>
+            <li>Marketing campaigns</li>
+          </ul>
+        </div>
+
+
+        <!-- 2 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+          </div>
+          <h3 class="service-title">Warehouse Services</h3>
+          <ul class="service-list">
+            <li>Warehousing</li>
+            <li>Logistics support</li>
+            <li>Inventory management</li>
+          </ul>
+        </div>
+
+
+        <!-- 3 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <h3 class="service-title">Website Design &amp; Development</h3>
+          <ul class="service-list">
+            <li>Custom websites</li>
+            <li>Landing pages</li>
+            <li>Corporate websites</li>
+          </ul>
+        </div>
+
+        <!-- 4 -->
+
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2a2 2 0 012 2v1a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2z" />
+              <path d="M12 17a2 2 0 012 2v1a2 2 0 01-2 2 2 2 0 01-2-2v-1a2 2 0 012-2z" />
+              <path d="M4.22 4.22a2 2 0 012.83 0l.7.7a2 2 0 010 2.83 2 2 0 01-2.83 0l-.7-.7a2 2 0 010-2.83z" />
+              <path d="M16.24 16.24a2 2 0 012.83 0l.7.7a2 2 0 010 2.83 2 2 0 01-2.83 0l-.7-.7a2 2 0 010-2.83z" />
+              <path d="M2 12a2 2 0 012-2h1a2 2 0 012 2 2 2 0 01-2 2H4a2 2 0 01-2-2z" />
+              <path d="M17 12a2 2 0 012-2h1a2 2 0 012 2 2 2 0 01-2 2h-1a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h3 class="service-title">AI Automation</h3>
+          <ul class="service-list">
+            <li>Workflow automation</li>
+            <li>AI-powered business solutions</li>
+            <li>Process optimisation</li>
+          </ul>
+        </div>
+
+        <!-- 5 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <h3 class="service-title">Website Performance Optimisation</h3>
+          <ul class="service-list">
+            <li>Speed improvements</li>
+            <li>Technical SEO</li>
+            <li>Core Web Vitals</li>
+          </ul>
+        </div>
+
+        <!-- 6 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </div>
+          <h3 class="service-title">Google Ads Management</h3>
+          <ul class="service-list">
+            <li>Search campaigns</li>
+            <li>Lead generation</li>
+            <li>Conversion tracking</li>
+          </ul>
+        </div>
+
+        <!-- 7 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg>
+          </div>
+          <h3 class="service-title">Meta Ads Management</h3>
+          <ul class="service-list">
+            <li>Facebook advertising</li>
+            <li>Instagram advertising</li>
+            <li>Audience targeting</li>
+          </ul>
+        </div>
+
+        <!-- 8 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+            </svg>
+          </div>
+          <h3 class="service-title">Social Media Marketing</h3>
+          <ul class="service-list">
+            <li>Content strategy</li>
+            <li>Brand growth</li>
+            <li>Engagement campaigns</li>
+          </ul>
+        </div>
+
+        <!-- 9 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+              <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+            </svg>
+          </div>
+          <h3 class="service-title">Website Redesign</h3>
+          <ul class="service-list">
+            <li>Modern UI/UX</li>
+            <li>Conversion improvements</li>
+            <li>Performance optimisation</li>
+          </ul>
+        </div>
+
+        <!-- 10 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          </div>
+          <h3 class="service-title">Audience Growth &amp; Engagement</h3>
+          <ul class="service-list">
+            <li>Community building</li>
+            <li>Customer engagement</li>
+            <li>Brand awareness</li>
+          </ul>
+        </div>
+
+        <!-- 11 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+          </div>
+          <h3 class="service-title">Performance Tracking &amp; Reporting</h3>
+          <ul class="service-list">
+            <li>KPI monitoring</li>
+            <li>Analytics dashboards</li>
+            <li>Monthly reports</li>
+          </ul>
+        </div>
+
+        <!-- 12 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <h3 class="service-title">Business Process Automation</h3>
+          <ul class="service-list">
+            <li>Operational automation</li>
+            <li>Productivity enhancement</li>
+            <li>Process streamlining</li>
+          </ul>
+        </div>
+
+        <!-- 13 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" />
+              <line x1="7" y1="7" x2="7.01" y2="7" />
+            </svg>
+          </div>
+          <h3 class="service-title">Labelling Services</h3>
+          <ul class="service-list">
+            <li>Product labelling</li>
+            <li>Packaging support</li>
+            <li>Compliance assistance</li>
+          </ul>
+        </div>
+
+        <!-- 14 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+            </svg>
+          </div>
+          <h3 class="service-title">Packing Services</h3>
+          <ul class="service-list">
+            <li>Product packaging</li>
+            <li>Fulfillment preparation</li>
+            <li>Shipping readiness</li>
+          </ul>
+        </div>
+
+        <!-- 15 -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="1" y="3" width="15" height="13" />
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
+          </div>
+          <h3 class="service-title">Shipping &amp; Receiving</h3>
+          <ul class="service-list">
+            <li>Order handling</li>
+            <li>Distribution support</li>
+            <li>Supply chain coordination</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════ WHY CHOOSE US ═════════════════════ -->
+  <section class="section" id="why">
+    <div class="container">
+      <div style="text-align:center" class="reveal">
+        <div class="section-label label">Why Us</div>
+        <h2 class="display-lg" style="margin-bottom:16px">Why Choose eMarketivo</h2>
+        <p style="color:var(--text-secondary);max-width:500px;margin:0 auto" class="body-md">We combine enterprise-grade
+          expertise with the agility of a dedicated team — built to deliver results.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3 class="why-title">Enterprise-Level Solutions</h3>
+          <p class="why-desc">Strategies and systems built to enterprise standard — scalable, secure, and ready for
+            growth at any stage.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <h3 class="why-title">Fast Delivery</h3>
+          <p class="why-desc">Rapid execution without compromise. We move quickly, meet deadlines, and keep you in the
+            loop every step of the way.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+          </div>
+          <h3 class="why-title">Data-Driven Results</h3>
+          <p class="why-desc">Every decision backed by real analytics. We measure what matters and optimise relentlessly
+            to maximise your ROI.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          </div>
+          <h3 class="why-title">Dedicated Support</h3>
+          <p class="why-desc">A committed team that treats your business like their own — available, responsive, and
+            genuinely invested in your success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ TRUST COUNTERS ════════════════════ -->
+  <!-- <section class="trust" id="trust">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item reveal">
+          <div class="trust-number"><span class="counter" data-target="200">0</span><span class="trust-plus">+</span>
+          </div>
+          <div class="trust-label">Projects Completed</div>
+        </div>
+        <div class="trust-item reveal">
+          <div class="trust-number"><span class="counter" data-target="150">0</span><span class="trust-plus">+</span>
+          </div>
+          <div class="trust-label">Clients Served</div>
+        </div>
+        <div class="trust-item reveal">
+          <div class="trust-number"><span class="counter" data-target="5">0</span><span class="trust-plus">+</span>
+          </div>
+          <div class="trust-label">Years Experience</div>
+        </div>
+        <div class="trust-item reveal">
+          <div class="trust-number"><span class="counter" data-target="98">0</span><span class="trust-plus">%</span>
+          </div>
+          <div class="trust-label">Satisfaction Rate</div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════ ABOUT ════════════════════════════ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-img-wrap">
+            <div class="about-img-inner">
+              <!-- Abstract SVG illustration -->
+              <svg class="about-illustration" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="40" y="60" width="320" height="200" rx="16" fill="#e8f5ee" />
+                <rect x="60" y="80" width="280" height="40" rx="8" fill="#fff" />
+                <rect x="72" y="92" width="80" height="14" rx="4" fill="#c9ebd6" />
+                <rect x="72" y="100" width="120" height="6" rx="3" fill="#e2ece7" />
+                <circle cx="310" cy="99" r="10" fill="#25a85a" opacity=".15" />
+                <circle cx="310" cy="99" r="5" fill="#25a85a" />
+                <rect x="60" y="134" width="130" height="110" rx="10" fill="#fff" />
+                <text x="75" y="154" font-family="sans-serif" font-size="10" fill="#7a9587"
+                  font-weight="600">GROWTH</text>
+                <rect x="75" y="162" width="90" height="64" rx="6" fill="#f0f5f2" />
+                <rect x="85" y="210" width="14" height="16" rx="3" fill="#3dbf72" opacity=".6" />
+                <rect x="103" y="198" width="14" height="28" rx="3" fill="#25a85a" opacity=".8" />
+                <rect x="121" y="186" width="14" height="40" rx="3" fill="#25a85a" />
+                <rect x="139" y="174" width="14" height="52" rx="3" fill="#1a8f4a" />
+                <rect x="200" y="134" width="140" height="50" rx="10" fill="#fff" />
+                <text x="215" y="154" font-family="sans-serif" font-size="9" fill="#7a9587">AUTOMATION RATE</text>
+                <text x="215" y="174" font-family="sans-serif" font-size="20" font-weight="800"
+                  fill="#0d1f15">94%</text>
+                <rect x="200" y="196" width="68" height="48" rx="10" fill="#fff" />
+                <text x="215" y="212" font-family="sans-serif" font-size="8" fill="#7a9587">LEADS</text>
+                <text x="215" y="232" font-family="sans-serif" font-size="14" font-weight="700"
+                  fill="#25a85a">+128%</text>
+                <rect x="276" y="196" width="64" height="48" rx="10" fill="#25a85a" />
+                <text x="291" y="212" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,.8)">ROAS</text>
+                <text x="291" y="232" font-family="sans-serif" font-size="14" font-weight="700" fill="#fff">4.2x</text>
+              </svg>
+            </div>
+          </div>
+          <div class="about-pill top">
+            <span class="dot"></span>
+            <!-- <span>Trusted by 150+ Businesses</span> -->
+          </div>
+          <div class="about-pill bottom">
+            <span class="dot"></span>
+            <span>Enterprise-Grade Agency</span>
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <div class="section-label label">About Us</div>
+          <h2 class="display-lg" style="margin-bottom:20px">
+            <!-- COMPANY NAME PLACEHOLDER -->
+            We Are eMarketivo
+          </h2>
+          <p>
+            <!-- ABOUT PARAGRAPH 1 — EDITABLE -->
+            eMarketivo is a full-service digital growth agency helping businesses of all sizes unlock their true
+            potential online. We combine cutting-edge technology, creative strategy, and data-driven execution to
+            deliver measurable results.
+          </p>
+          <p>
+            <!-- ABOUT PARAGRAPH 2 — EDITABLE -->
+            From AI-powered automation to high-performance advertising, we offer an integrated suite of services that
+            work together to drive sustainable business growth. Our team of specialists brings enterprise-level
+            expertise to every project.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="af-icon">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <div class="af-text">
+                <strong>Results-Oriented Approach</strong>
+                <span>Every strategy we create is tied to your KPIs and business objectives.</span>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="af-icon">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <div class="af-text">
+                <strong>End-to-End Expertise</strong>
+                <span>From digital marketing to warehousing, we handle the full spectrum.</span>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="af-icon">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <div class="af-text">
+                <strong>Transparent Communication</strong>
+                <span>Real-time reporting and dedicated account management throughout.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════ TEAM ══════════════════════════════ -->
+  <section class="section section-alt" id="team">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:64px" class="reveal">
+        <div class="section-label label">Our People</div>
+        <h2 class="display-lg" style="margin-bottom:16px">Meet the Team</h2>
+        <p style="color:var(--text-secondary);max-width:480px;margin:0 auto" class="body-md">Experienced professionals
+          dedicated to growing your business with expertise and care.</p>
+      </div>
+      <div class="team-grid" id="teamGrid">
+        <!-- TEAM MEMBER 1 — EDITABLE -->
+        <div class="team-card reveal">
+          <div class="team-photo"><!-- PHOTO -->JD</div>
+          <div class="team-name"><!-- NAME -->John Doe</div>
+          <div class="team-role"><!-- ROLE -->CEO & Founder</div>
+          <p class="team-bio"><!-- BIO -->Visionary leader with 10+ years in digital growth and business automation,
+            helping brands scale globally.</p>
+          <a href="#" class="team-linkedin" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+        </div>
+        <!-- TEAM MEMBER 2 — EDITABLE -->
+        <div class="team-card reveal">
+          <div class="team-photo"><!-- PHOTO -->JS</div>
+          <div class="team-name"><!-- NAME -->Jane Smith</div>
+          <div class="team-role"><!-- ROLE -->Head of Marketing</div>
+          <p class="team-bio"><!-- BIO -->Performance marketing specialist with a track record of delivering 5x ROAS
+            across Google and Meta campaigns.</p>
+          <a href="#" class="team-linkedin" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+        </div>
+        <!-- TEAM MEMBER 3 — EDITABLE -->
+        <div class="team-card reveal">
+          <div class="team-photo"><!-- PHOTO -->MK</div>
+          <div class="team-name"><!-- NAME -->Mike Khan</div>
+          <div class="team-role"><!-- ROLE -->Lead Developer</div>
+          <p class="team-bio"><!-- BIO -->Full-stack engineer building high-performance websites and automation systems
+            for enterprise clients.</p>
+          <a href="#" class="team-linkedin" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+        </div>
+        <!-- TEAM MEMBER 4 — EDITABLE -->
+        <div class="team-card reveal">
+          <div class="team-photo"><!-- PHOTO -->SR</div>
+          <div class="team-name"><!-- NAME -->Sara Rizvi</div>
+          <div class="team-role"><!-- ROLE -->Operations Manager</div>
+          <p class="team-bio"><!-- BIO -->Supply chain and logistics expert ensuring seamless warehouse and fulfilment
+            operations for all clients.</p>
+          <a href="#" class="team-linkedin" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════ CONTACT ═══════════════════════════ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:64px" class="reveal">
+        <div class="section-label label">Get In Touch</div>
+        <h2 class="display-lg" style="margin-bottom:16px">Let's Grow Your Business</h2>
+        <p style="color:var(--text-secondary);max-width:480px;margin:0 auto" class="body-md">Ready to scale? Reach out
+          via call, WhatsApp, or email — we respond within hours.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">Whatsapp Number</div>
+              <!-- WhatsApp — EDITABLE -->
+              <div class="ci-value">+1 (630) 523-2372
+              </div>
+            </div>
+          </div>
+          <!-- <div class="contact-item">
+            <div class="ci-icon">
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+              </svg>
+              <div class="ci-label">WhatsApp</div>
+              WHATSAPP — EDITABLE
+              <div class="ci-value">+1 (630) 523-2372
+              </div>
+            </div>
+          </div> -->
+          <div class="contact-item">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">Email</div>
+              <!-- EMAIL — EDITABLE -->
+              <div class="ci-value">contact.eMarketivo.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">Business Address</div>
+              <!-- ADDRESS — EDITABLE -->
+              <div class="ci-value">720 Ash Rd<br>Hoffman Estates, IL 60169<br>United States</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-ctas reveal">
+          <div class="contact-cta-block">
+            <h3 class="display-md" style="margin-bottom:12px">Ready to get started?</h3>
+            <p>Speak directly with our team. No hold queues — we pick up.</p>
+            <div class="contact-cta-btns">
+              <!-- PHONE — EDITABLE -->
+              <a href="tel:+10000000000" class="btn btn-primary btn-xl" style="justify-content:center">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg>
+                Call Now — +1 (630) 523-2372
+
+              </a>
+              <!-- WHATSAPP — EDITABLE -->
+              <a href="https://wa.me/16305232372" class="btn btn-wa btn-xl" style="justify-content:center">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                </svg>
+                WhatsApp Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ FOOTER ════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">
+              <svg viewBox="0 0 24 24">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </div>
+            <!-- COMPANY NAME — EDITABLE -->
+            <span class="footer-brand-name">eMarketivo</span>
+          </div>
+          <!-- DESCRIPTION — EDITABLE -->
+          <p class="footer-desc">A full-service digital growth agency helping businesses scale through smart automation,
+            data-driven marketing, and enterprise-grade digital solutions.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <!-- EDITABLE CONTACT DETAILS -->
+            <li><a href="tel:+10000000000">+1 (630) 523-2372
+              </a></li>
+            <li><a href="https://wa.me/16305232372">WhatsApp</a></li>
+            <li><a href="mailto:hello@youragency.com">contact.emarketivo.com</a></li>
+            <li style="line-height:1.5">720 Ash Rd<br>Hoffman Estates, IL 60169<br>United States</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <!-- EDITABLE COPYRIGHT -->
+        <span class="footer-copy">© 2025 eMarketivo. All rights reserved.</span>
+        <span class="footer-copy" style="color:rgba(255,255,255,.4)">Built for Growth.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════ SCRIPTS ══════════════════════════ -->
+  <script>
+    /* ── NAV SCROLL ── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ── HAMBURGER ── */
+    const ham = document.getElementById('hamburger');
+    const mob = document.getElementById('mobileMenu');
+    ham.addEventListener('click', () => mob.classList.toggle('open'));
+    function closeMobile() { mob.classList.remove('open') }
+
+    /* ── SCROLL REVEAL ── */
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(r => observer.observe(r));
+
+    /* ── COUNTERS ── */
+    function animateCounter(el) {
+      const target = +el.dataset.target;
+      const duration = 1800;
+      const step = target / duration * 16;
+      let current = 0;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.round(current);
+        if (current >= target) clearInterval(timer);
+      }, 16);
+    }
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          counterObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: .5 });
+    document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
+
+    /* ── SMOOTH ACTIVE NAV ── */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(l => {
+        l.style.color = l.getAttribute('href') === '#' + current ? 'var(--green-600)' : '';
+        l.style.background = l.getAttribute('href') === '#' + current ? 'var(--green-50)' : '';
+      });
+    }, { passive: true });
+  </script>
+</body>
+
+</html>
