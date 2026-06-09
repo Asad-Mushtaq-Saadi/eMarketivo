@@ -1076,7 +1076,9 @@
     /* ─── TEAM ────────────────────────────────────────────────────── */
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      place-items: center
+      ;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-top: 56px
     }
@@ -1104,7 +1106,7 @@
       border: 1.5px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 28px 24px;
-      text-align: center;
+      text-align: left;
       transition: var(--transition)
     }
 
@@ -1120,7 +1122,8 @@
       border-radius: 50%;
       background: linear-gradient(135deg, var(--green-100), var(--surface));
       border: 3px solid var(--border);
-      margin: 0 auto 18px;
+      /* margin: 0 auto 18px; */
+      margin-bottom: 18px;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -2174,77 +2177,71 @@
 
   <!-- ══════════════════════ TEAM ══════════════════════════════ -->
   <section class="section section-alt" id="team">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:64px" class="reveal">
-        <div class="section-label label">Our People</div>
-        <h2 class="display-lg" style="margin-bottom:16px">Meet the Team</h2>
-        <p style="color:var(--text-secondary);max-width:480px;margin:0 auto" class="body-md">Experienced professionals
-          dedicated to growing your business with expertise and care.</p>
-      </div>
-      <div class="team-grid" id="teamGrid">
-        <!-- TEAM MEMBER 1 — EDITABLE -->
-        <div class="team-card reveal">
-          <div class="team-photo"><!-- PHOTO -->JD</div>
-          <div class="team-name"><!-- NAME -->John Doe</div>
-          <div class="team-role"><!-- ROLE -->CEO & Founder</div>
-          <p class="team-bio"><!-- BIO -->Visionary leader with 10+ years in digital growth and business automation,
-            helping brands scale globally.</p>
-          <a href="#" class="team-linkedin" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24">
-              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </a>
-        </div>
-        <!-- TEAM MEMBER 2 — EDITABLE -->
-        <div class="team-card reveal">
-          <div class="team-photo"><!-- PHOTO -->JS</div>
-          <div class="team-name"><!-- NAME -->Jane Smith</div>
-          <div class="team-role"><!-- ROLE -->Head of Marketing</div>
-          <p class="team-bio"><!-- BIO -->Performance marketing specialist with a track record of delivering 5x ROAS
-            across Google and Meta campaigns.</p>
-          <a href="#" class="team-linkedin" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24">
-              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </a>
-        </div>
-        <!-- TEAM MEMBER 3 — EDITABLE -->
-        <div class="team-card reveal">
-          <div class="team-photo"><!-- PHOTO -->MK</div>
-          <div class="team-name"><!-- NAME -->Mike Khan</div>
-          <div class="team-role"><!-- ROLE -->Lead Developer</div>
-          <p class="team-bio"><!-- BIO -->Full-stack engineer building high-performance websites and automation systems
-            for enterprise clients.</p>
-          <a href="#" class="team-linkedin" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24">
-              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </a>
-        </div>
-        <!-- TEAM MEMBER 4 — EDITABLE -->
-        <div class="team-card reveal">
-          <div class="team-photo"><!-- PHOTO -->SR</div>
-          <div class="team-name"><!-- NAME -->Sara Rizvi</div>
-          <div class="team-role"><!-- ROLE -->Operations Manager</div>
-          <p class="team-bio"><!-- BIO -->Supply chain and logistics expert ensuring seamless warehouse and fulfilment
-            operations for all clients.</p>
-          <a href="#" class="team-linkedin" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24">
-              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </a>
-        </div>
-      </div>
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px" class="reveal">
+      <div class="section-label label">Our People</div>
+      <h2 class="display-lg" style="margin-bottom:16px">Meet the Team</h2>
+      <p style="color:var(--text-secondary);max-width:480px;margin:0 auto" class="body-md">
+        Experienced professionals dedicated to growing your business with expertise and care.
+      </p>
     </div>
-  </section>
+
+    <div class="team-grid" id="teamGrid">
+
+      <!-- TEAM MEMBER 1 -->
+      <div class="team-card reveal">
+        <div class="team-photo">SM</div>
+
+        <div class="team-name">Salahudin</div>
+
+        <div class="team-role">
+          Warehouse Owner
+        </div>
+
+        <p class="team-bio">
+          Experienced warehouse owner specializing in inventory management,
+          logistics operations, supply chain coordination, storage solutions,
+          order fulfillment, and warehouse efficiency for growing businesses.
+        </p>
+      </div>
+
+      <!-- TEAM MEMBER 2 -->
+      <div class="team-card reveal">
+        <div class="team-photo">AA</div>
+
+        <div class="team-name">Ashfaq Ahmad</div>
+
+        <div class="team-role">
+          Commercial Ads & Meta Ads Specialist
+        </div>
+
+        <p class="team-bio">
+          Specializes in commercial advertisement production, Meta Ads,
+          campaign optimization, audience targeting, lead generation, and
+          performance-focused marketing strategies that help businesses scale.
+        </p>
+      </div>
+
+      <!-- TEAM MEMBER 3 -->
+      <div class="team-card reveal">
+        <div class="team-photo">AS</div>
+
+        <div class="team-name">Asad Mushtaq Saadi</div>
+
+        <div class="team-role">
+          Web Redesign & Development Specialist
+        </div>
+
+        <p class="team-bio">
+          Focused on website redesign, custom web development, responsive
+          interfaces, performance optimization, UI/UX improvements, and
+          creating modern digital experiences that convert visitors into customers.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <div class="divider"></div>
 
