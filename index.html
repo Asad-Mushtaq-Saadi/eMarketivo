@@ -385,6 +385,59 @@
       gap: 10px
     }
 
+    /* ─── Reviews ────────────────────────────────────────────────────── */
+    .testimonials-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:60px;
+}
+
+.testimonial-card{
+    background:var(--white);
+    border:1.5px solid var(--border);
+    border-radius:var(--radius-lg);
+    padding:30px;
+    transition:var(--transition);
+}
+
+.testimonial-card:hover{
+    border-color:var(--green-400);
+    box-shadow:var(--shadow-lg);
+    transform:translateY(-4px);
+}
+
+.testimonial-stars{
+    color:var(--green-500);
+    font-size:1rem;
+    margin-bottom:16px;
+}
+
+.testimonial-text{
+    color:var(--text-secondary);
+    font-size:.9rem;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.testimonial-name{
+    font-family:var(--font-display);
+    font-weight:700;
+}
+
+.testimonial-role{
+    color:var(--green-600);
+    font-size:.82rem;
+}
+
+@media(max-width:900px){
+    .testimonials-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* --------- */
+
     /* ─── HERO ────────────────────────────────────────────────────── */
     .hero {
       padding: 160px 0 100px;
@@ -1539,13 +1592,13 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
-      <div class="nav-phone">
+      <!-- <div class="nav-phone">
         <svg viewBox="0 0 24 24">
           <path
             d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
         </svg>
-        <!-- PHONE NUMBER --><span>+1 (630) 523-2372</span>
-      </div>
+        PHONE NUMBER<span>+1 (630) 523-2372</span>
+      </div> -->
       <div class="nav-actions">
         <a href="https://wa.me/16305232372" class="btn btn-wa" style="padding:9px 18px;font-size:.82rem">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1605,7 +1658,7 @@
             We help businesses increase visibility, automate operations, improve customer acquisition, and create modern
             digital experiences that convert.
           </p>
-          <div class="hero-ctas fade-up fade-up-4">
+          <!-- <div class="hero-ctas fade-up fade-up-4">
             <a href="tel:+10000000000" class="btn btn-primary btn-xl">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -1622,7 +1675,7 @@
               </svg>
               WhatsApp Us
             </a>
-          </div>
+          </div> -->
           <div class="hero-stats fade-up fade-up-4">
             <div class="hero-stat">
               <div class="hero-stat-number">200<span style="color:var(--green-500)">+</span></div>
@@ -2039,6 +2092,87 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
+<section class="section section-alt" id="testimonials">
+    <div class="container">
+
+        <div style="text-align:center;margin-bottom:64px">
+            <div class="section-label label">
+                Testimonials
+            </div>
+
+            <h2 class="display-lg" style="margin-bottom:16px">
+                What Our Clients Say
+            </h2>
+
+            <p class="body-md"
+               style="max-width:550px;margin:0 auto;color:var(--text-secondary)">
+                Trusted by businesses that value growth, automation, and measurable results.
+            </p>
+        </div>
+
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p class="testimonial-text">
+                    eMarketivo transformed our online presence and significantly increased our lead generation. Their team delivered beyond expectations.
+                </p>
+
+                <div class="testimonial-name">
+                    Michael Anderson
+                </div>
+
+                <div class="testimonial-role">
+                    Business Owner
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p class="testimonial-text">
+                    Professional, responsive, and highly skilled. Their automation solutions saved us countless hours every month.
+                </p>
+
+                <div class="testimonial-name">
+                    Sarah Wilson
+                </div>
+
+                <div class="testimonial-role">
+                    Operations Manager
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p class="testimonial-text">
+                    From website redesign to advertising campaigns, everything was executed perfectly. We saw excellent ROI.
+                </p>
+
+                <div class="testimonial-name">
+                    David Thompson
+                </div>
+
+                <div class="testimonial-role">
+                    CEO
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
   <!-- ══════════════════════ TRUST COUNTERS ════════════════════ -->
   <!-- <section class="trust" id="trust">
     <div class="container">
@@ -2335,7 +2469,7 @@
             <p>Speak directly with our team. No hold queues — we pick up.</p>
             <div class="contact-cta-btns">
               <!-- PHONE — EDITABLE -->
-              <a href="tel:+10000000000" class="btn btn-primary btn-xl" style="justify-content:center">
+              <!-- <a href="tel:+10000000000" class="btn btn-primary btn-xl" style="justify-content:center">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path
@@ -2343,7 +2477,7 @@
                 </svg>
                 Call Now — +1 (630) 523-2372
 
-              </a>
+              </a> -->
               <!-- WHATSAPP — EDITABLE -->
               <a href="https://wa.me/16305232372" class="btn btn-wa btn-xl" style="justify-content:center">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
