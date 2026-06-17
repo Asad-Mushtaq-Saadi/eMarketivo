@@ -385,6 +385,72 @@
       gap: 10px
     }
 
+    /* ─── Qoute Form ────────────────────────────────────────────────────── */
+    .quote-card{
+    max-width:900px;
+    margin:auto;
+    background:#fff;
+    border:1.5px solid var(--border);
+    border-radius:var(--radius-lg);
+    padding:40px;
+    box-shadow:var(--shadow-lg);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.full-width{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    font-family:var(--font-display);
+    font-size:.9rem;
+    margin-bottom:10px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    border:1.5px solid var(--border);
+    border-radius:12px;
+    padding:15px 18px;
+    font-size:.95rem;
+    outline:none;
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--green-500);
+}
+
+#successMessage{
+    margin-top:20px;
+    color:var(--green-600);
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.quote-card{
+padding:25px;
+}
+
+}
     /* ─── Reviews ────────────────────────────────────────────────────── */
     .testimonials-grid{
     display:grid;
@@ -1600,6 +1666,9 @@
         PHONE NUMBER<span>+1 (630) 523-2372</span>
       </div> -->
       <div class="nav-actions">
+        <a href="#quote-form" class="btn btn-primary" style="padding:9px 18px;font-size:.82rem">
+    Get Quote
+</a>
         <a href="https://wa.me/16306752318" class="btn btn-wa" style="padding:9px 18px;font-size:.82rem">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
@@ -1623,14 +1692,17 @@
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
     <div class="mobile-menu-actions">
-      <a href="tel:+10000000000" class="btn btn-primary btn-lg">
+      <!-- <a href="tel:+10000000000" class="btn btn-primary btn-lg">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round">
           <path
             d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
         </svg>
         Call Now
-      </a>
+      </a> -->
+      <a href="#quote-form" class="btn btn-primary" style="padding:9px 18px;font-size:.82rem">
+    Get Quote
+</a>
       <a href="https://wa.me/16306752318" class="btn btn-wa" style="padding:9px 18px;font-size:.82rem">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round">
@@ -1761,6 +1833,85 @@
   </section>
 
   <div class="divider"></div>
+  <!-- ═══════════════════════ Qoute Form ════════════════════════ -->
+   <section class="section section-alt" id="quote-form">
+    <div class="container">
+
+        <div style="text-align:center;margin-bottom:50px">  
+            <div class="section-label label">
+                Get Started
+            </div>
+
+            <h2 class="display-lg">
+                Request A Free Quote
+            </h2>
+
+            <p class="body-md" style="color:var(--text-secondary);max-width:600px;margin:auto">
+                Tell us about your project and we'll get back to you with a customized solution.
+            </p>
+        </div>
+
+        <div class="quote-card">
+
+            <form id="quoteForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="name" required placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company Name (Optional)</label>
+                        <input type="text" id="company">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Service Required</label>
+
+                        <select id="service">
+
+                          <option>Meta Ads</option>
+                          <option>Social Media Marketing</option>
+                          <option>WareHouse Service</option>
+                          <option>Website Development</option>
+                          <option>Website Redesign</option>
+                          <option>AI Automation</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Message</label>
+
+                        <textarea id="message" rows="6" placeholder="Detail Here..."></textarea>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg">
+                    Get My Quote
+                </button>
+
+                <p id="successMessage"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
 
   <!-- ═══════════════════════ SERVICES ════════════════════════ -->
   <section class="section section-alt" id="services">
