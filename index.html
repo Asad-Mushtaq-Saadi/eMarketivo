@@ -1638,6 +1638,7 @@ padding:25px;
   </style>
 </head>
 
+
 <body>
 
   <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
@@ -1699,7 +1700,7 @@ padding:25px;
             d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
         </svg>
         Call Now
-      </a> -->
+      </a> -->z
       <a href="#quote-form" onclick="closeMobile()" class="btn btn-primary" style="padding:9px 18px;font-size:.82rem">
     Get Quote
 </a>
@@ -2755,7 +2756,86 @@ padding:25px;
         l.style.background = l.getAttribute('href') === '#' + current ? 'var(--green-50)' : '';
       });
     }, { passive: true });
-  </script>
+
+    </script>
+
+<!-- Firebase -->
+
+    <script type="module">
+
+// Firebase CDN imports
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// 🔥 Your Firebase Config (replace if needed)
+const firebaseConfig = {
+  apiKey: "AIzaSyCEnGbbM5368h8kdRzp71oxZyz09XUzhGA",
+  authDomain: "emarketivo-contact-form.firebaseapp.com",
+  projectId: "emarketivo-contact-form",
+  storageBucket: "emarketivo-contact-form.firebasestorage.app",
+  messagingSenderId: "52745346433",
+  appId: "1:52745346433:web:0fcf8c6b63b96bfd2b9c80"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Wait for page load
+window.addEventListener("DOMContentLoaded", () => {
+
+  const form = document.getElementById("quoteForm");
+  const successMessage = document.getElementById("successMessage");
+
+  if (!form) {
+    console.error("❌ quoteForm not found in HTML");
+    return;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Get values
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const company = document.getElementById("company").value;
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value;
+
+    try {
+      // Save to Firestore
+      await addDoc(collection(db, "quotes"), {
+        name,
+        email,
+        phone,
+        company,
+        service,
+        message,
+        createdAt: serverTimestamp()
+      });
+
+      // Success UI
+      successMessage.style.color = "green";
+      successMessage.innerText = "✅ Quote submitted successfully!";
+      form.reset();
+
+    } catch (error) {
+      console.error("Firebase Error:", error);
+
+      successMessage.style.color = "red";
+      successMessage.innerText = "❌ Failed to submit. Try again.";
+    }
+  });
+
+});
+
+</script>
 </body>
 
 </html>
